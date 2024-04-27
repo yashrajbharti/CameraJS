@@ -12,4 +12,4 @@ A vanilla JavaScript project packed with all the basic features of a camera, suc
 
 ## License
 
-This project is licensed under MIT License and is open-source and free to use in both your personal and commercial projects.
+This project is licensed under [MIT License](./LICENSE) and is open-source and free to use in both your personal and commercial projects.
