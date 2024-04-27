@@ -132,3 +132,7 @@ video.flip {
         rotate: -180deg;
     }
 }
+
+.capture-button {
+    cursor: pointer;
+}
