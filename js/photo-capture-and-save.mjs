@@ -6,5 +6,8 @@ export const capturePhoto = () => {
     ).checked;
     if (isVideoMode) return;
     photoButton.classList.add("click");
+    setTimeout(() => {
+      photoButton.classList.remove("click");
+    }, 200);
   });
 };

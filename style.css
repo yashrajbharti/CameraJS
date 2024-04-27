@@ -136,3 +136,22 @@ video.flip {
 .capture-button {
     cursor: pointer;
 }
+
+.capture-button:is(.click) .capture-icon {
+    animation: click 0.2s ease-in-out both;
+    transform-origin: center;
+}
+
+@keyframes click {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 0.9;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
