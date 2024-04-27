@@ -6,12 +6,12 @@ export const streamWebCamVideo = (isFrontCamera = true) => {
     },
   };
   isFrontCamera && video.classList.add("flip");
-  !isFrontCamera && video.classList.remove("flip");
   window.navigator.mediaDevices
     .getUserMedia(constraints)
     .then((stream) => {
       video.srcObject = stream;
       video.onloadedmetadata = (e) => {
+        !isFrontCamera && video.classList.remove("flip");
         video.play();
       };
     })
