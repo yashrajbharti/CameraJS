@@ -6,7 +6,7 @@ export const changeFacingMode = () => {
   facingModeButton.addEventListener("click", () => {
     facingModeButton.querySelector(".rotate").classList.add("rotating");
     streamWebCamVideo(isFrontCamera);
-    isFrontCamera != isFrontCamera;
+    isFrontCamera = !isFrontCamera;
     setTimeout(() => {
       facingModeButton.querySelector(".rotate").classList.remove("rotating");
     }, 1500);
