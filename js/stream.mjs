@@ -5,6 +5,8 @@ export const streamWebCamVideo = (isFrontCamera = true) => {
       facingMode: isFrontCamera ? "user" : "environment", // Toggle between front and rear cameras
     },
   };
+  isFrontCamera && video.classList.add("flip");
+  !isFrontCamera && video.classList.remove("flip");
   window.navigator.mediaDevices
     .getUserMedia(constraints)
     .then((stream) => {
