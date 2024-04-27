@@ -92,3 +92,19 @@ video {
 .switch-camera-video-photo-mode input[type="checkbox"]:checked+label {
     background-image: linear-gradient(to right, #171717 50%, white 50%);
 }
+
+.switch-camera-facing-mode .rotate:is(.rotating) {
+    animation: rotate 3s both;
+    transform-origin: 50% calc(50% + 1px);
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+
+    }
+
+    100% {
+        rotate: -360deg;
+    }
+}
