@@ -95,6 +95,10 @@ video {
     background-image: linear-gradient(to right, #171717 50%, white 50%);
 }
 
+#camera:has(.switch-camera-video-photo-mode input[type="checkbox"]:checked) .capture-button .capture-icon {
+    fill: red;
+}
+
 .switch-camera-facing-mode {
     cursor: pointer;
     pointer-events: all;
