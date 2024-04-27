@@ -97,12 +97,17 @@ video {
 
 .switch-camera-facing-mode {
     cursor: pointer;
+}
 
+.switch-camera-facing-mode .rotate {
+    cursor: pointer;
+    pointer-events: all;
 }
 
 .switch-camera-facing-mode .rotate:is(.rotating) {
     animation: rotate 1.5s both;
     transform-origin: 50% calc(50% + 1.1px);
+    pointer-events: none;
 }
 
 @keyframes rotate {
