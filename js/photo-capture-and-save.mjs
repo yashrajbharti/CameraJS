@@ -24,9 +24,9 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   canvas.width = video.videoWidth * scaleFactor;
   canvas.height = video.videoHeight * scaleFactor;
   context.translate(canvas.width, 0);
-  if (isMirrored) {
-    context.scale(-1, 1);
-  }
+  // if (isMirrored) {
+  context.scale(-1, 1);
+  // }
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
   try {
     const imageDataUrl = canvas.toDataURL("image/jpeg", 0.9);
