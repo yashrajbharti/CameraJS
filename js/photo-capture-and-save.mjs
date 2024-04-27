@@ -40,11 +40,11 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   }, 200);
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
   try {
-    const imageDataUrl = canvas.toDataURL("image/jpeg", 0.9);
+    const imageDataUrl = canvas.toDataURL("image/png", 0.9);
     const link = document.createElement("a");
     const timestamp = new Date().toISOString().replace(/[:.]/g, "");
     link.href = imageDataUrl;
-    link.download = `photo_${timestamp}.jpg`;
+    link.download = `photo_${timestamp}.png`;
     link.click();
   } catch (error) {
     console.error("Error capturing photo:", error);
