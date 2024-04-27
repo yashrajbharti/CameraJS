@@ -1,6 +1,5 @@
 export let mediaRecorder = null;
 let chunks = [];
-let isRecording = false;
 const recordingIndicator = document.createElement("div");
 
 export const captureVideo = () => {
@@ -18,7 +17,7 @@ export const captureVideo = () => {
   });
 };
 
-const recordVideo = async (isMirrored) => {
+const recordVideo = async (isMirrored = false) => {
   const video = document.getElementById("stream");
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
@@ -38,7 +37,6 @@ const recordVideo = async (isMirrored) => {
     recordingIndicator.style.color = "white";
     recordingIndicator.style.padding = "5px";
     recordingIndicator.style.zIndex = "1";
-    isRecording = true;
     document.body.appendChild(recordingIndicator);
 
     mediaRecorder.onstop = () => {
@@ -52,6 +50,13 @@ const recordVideo = async (isMirrored) => {
       if (mediaRecorder && mediaRecorder.state === "recording")
         mediaRecorder.stop();
     });
+    facingModeButton.addEventListener("click", () => {
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+        isMirrored = !isMirrored;
+        recordVideo(isMirrored);
+      }
+    });
   } catch (e) {
     console.error(e);
   }
@@ -59,7 +64,6 @@ const recordVideo = async (isMirrored) => {
 
 const saveRecordedVideo = () => {
   recordingIndicator.remove();
-  isRecording = false;
   if (!chunks.length) {
     console.error("No recorded video data available.");
     return;
