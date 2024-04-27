@@ -59,7 +59,10 @@ const recordVideo = async (isMirrored) => {
     const toggle = document.querySelector(
       ".switch-camera-video-photo-mode input[type='checkbox']"
     );
-    toggle.addEventListener("change", () => mediaRecorder.stop());
+    toggle.addEventListener("change", () => {
+      if (mediaRecorder && mediaRecorder.state === "recording")
+        mediaRecorder.stop();
+    });
   } catch (e) {
     console.error(e);
   }
