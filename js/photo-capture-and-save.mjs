@@ -20,7 +20,7 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   const video = document.getElementById("stream");
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
-  const scaleFactor = 5;
+  const scaleFactor = 2;
   canvas.width = video.videoWidth * scaleFactor;
   canvas.height = video.videoHeight * scaleFactor;
   if (isMirrored) {
