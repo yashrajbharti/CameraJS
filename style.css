@@ -33,7 +33,7 @@ body {
 /* Video Element */
 video {
     inline-size: 100vw;
-    block-size: calc(100vh - 200px);
+    block-size: calc(100vh - 220px);
     object-fit: cover;
     object-position: center;
 }
