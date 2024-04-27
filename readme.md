@@ -9,6 +9,8 @@ A vanilla JavaScript project packed with all the basic features of a camera, suc
 - Permissions UI
 - Easy to install into projects using a cdn
 - Custom class `new CameraJS()`
+- Choice of features to opt-in (no-switch-mode, only-photo, only-video, only-stream, etc)
+- Control of default state of the app (initState - front-camera, video-mode, etc)
 
 ## License
 
