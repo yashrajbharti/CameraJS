@@ -29,14 +29,9 @@ const recordVideo = async (isMirrored = false) => {
     mediaRecorder.ondataavailable = (event) => {
       chunks.push(event.data);
     };
-    recordingIndicator.textContent = "Recording... Click to stop";
-    recordingIndicator.style.position = "fixed";
-    recordingIndicator.style.top = "10px";
-    recordingIndicator.style.left = "10px";
-    recordingIndicator.style.backgroundColor = "red";
-    recordingIndicator.style.color = "white";
-    recordingIndicator.style.padding = "5px";
-    recordingIndicator.style.zIndex = "1";
+    recordingIndicator.textContent = "00:00:00";
+    recordingIndicator.classList.add("record");
+
     document.body.appendChild(recordingIndicator);
 
     mediaRecorder.onstop = () => {
