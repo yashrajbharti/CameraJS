@@ -5,6 +5,9 @@ export const capturePhoto = () => {
       ".switch-camera-video-photo-mode input[type='checkbox']"
     ).checked;
     if (isVideoMode) return;
+    const facingModeButton = document.querySelector(
+      ".switch-camera-facing-mode"
+    );
     photoButton.classList.add("click");
     setTimeout(() => {
       photoButton.classList.remove("click");
