@@ -9,17 +9,21 @@ export const capturePhoto = () => {
     setTimeout(() => {
       photoButton.classList.remove("click");
     }, 200);
-    drawOnCanvasAndSavePhoto();
+    drawOnCanvasAndSavePhoto(facingModeButton.dataset.facingMode === "front");
   });
 };
 
-const drawOnCanvasAndSavePhoto = async () => {
+const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   const video = document.getElementById("stream");
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
-  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  context.translate(canvas.width, 0);
+  if (isMirrored) {
+    context.scale(-1, 1);
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  }
   try {
     const imageDataUrl = canvas.toDataURL("image/jpeg");
     const link = document.createElement("a");

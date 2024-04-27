@@ -1,4 +1,4 @@
-const isMobileOrTablet = function () {
+export const isMobileOrTablet = function () {
   let check = false;
   (function (a) {
     if (

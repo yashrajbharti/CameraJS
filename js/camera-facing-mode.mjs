@@ -9,6 +9,7 @@ export const changeFacingMode = () => {
       facingModeButton.querySelector(".rotate").classList.remove("rotating");
     }, 1500);
     streamWebCamVideo(isFrontCamera);
+    facingModeButton.dataset.facingMode = isFrontCamera ? "front" : "back";
     isFrontCamera = !isFrontCamera;
   });
 };
