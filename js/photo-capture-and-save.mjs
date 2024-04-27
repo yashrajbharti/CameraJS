@@ -42,8 +42,9 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   try {
     const imageDataUrl = canvas.toDataURL("image/jpeg", 0.9);
     const link = document.createElement("a");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "");
     link.href = imageDataUrl;
-    link.download = `photo_${new Date().toUTCString()}.jpg`;
+    link.download = `photo_${timestamp}.jpg`;
     link.click();
   } catch (error) {
     console.error("Error capturing photo:", error);
