@@ -25,3 +25,11 @@ html {
 body {
     background-color: #000000;
 }
+
+/* Video Element */
+video {
+    inline-size: 100vw;
+    block-size: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
