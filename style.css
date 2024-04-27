@@ -166,7 +166,3 @@ video.flip {
         scale: 1;
     }
 }
-
-#camera:has(.capture-button:is(.click)) video {
-    opacity: 0;
-}

@@ -27,6 +27,17 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
     context.translate(canvas.width, 0);
     context.scale(-1, 1);
   }
+  const flashElement = document.createElement("div");
+  flashElement.style.position = "fixed";
+  flashElement.style.top = "0";
+  flashElement.style.left = "0";
+  flashElement.style.width = "100%";
+  flashElement.style.height = "calc(100vh - 220px)";
+  flashElement.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  document.body.appendChild(flashElement);
+  setTimeout(() => {
+    flashElement.remove();
+  }, 200);
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
   try {
     const imageDataUrl = canvas.toDataURL("image/jpeg", 0.9);
