@@ -20,8 +20,6 @@ export const captureVideo = () => {
 
 const recordVideo = async (isMirrored) => {
   const video = document.getElementById("stream");
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
     return;
@@ -32,15 +30,6 @@ const recordVideo = async (isMirrored) => {
     mediaRecorder.ondataavailable = (event) => {
       chunks.push(event.data);
     };
-    const scaleFactor = 5;
-    canvas.width = video.videoWidth * scaleFactor;
-    canvas.height = video.videoHeight * scaleFactor;
-    if (isMirrored) {
-      context.translate(canvas.width, 0);
-      context.scale(-1, 1);
-    }
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
     recordingIndicator.textContent = "Recording... Click to stop";
     recordingIndicator.style.position = "fixed";
     recordingIndicator.style.top = "10px";
