@@ -23,13 +23,72 @@ html {
 }
 
 body {
-    background-color: #000000;
+    background-color: black;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Video Element */
 video {
     inline-size: 100vw;
-    block-size: calc(100vh - 150px);
+    block-size: calc(100vh - 200px);
     object-fit: cover;
     object-position: center;
+}
+
+.controls {
+    display: flex;
+    block-size: 100px;
+    inline-size: 90vw;
+    margin-inline: auto;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.filters {
+    inline-size: 48px;
+    block-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.filters p {
+    inline-size: 48px;
+    block-size: 48px;
+    background-image: linear-gradient(black 50%, white);
+}
+
+.switch-camera-video-photo-mode input[type="checkbox"] {
+    display: none;
+}
+
+.switch-camera-video-photo-mode label {
+    display: block;
+    inline-size: max-content;
+    margin-inline: auto;
+    border-radius: 40px;
+    padding: 0.7rem;
+    background-color: #171717;
+}
+
+.switch-camera-video-photo-mode label span {
+    color: white;
+    padding-inline: 10px;
+    text-align: center;
+    mix-blend-mode: difference;
+}
+
+.switch-camera-video-photo-mode input[type="checkbox"]+label {
+    background-image: linear-gradient(to right, white 50%, #171717 50%);
+}
+
+.switch-camera-video-photo-mode input[type="checkbox"]:checked+label {
+    background-image: linear-gradient(to right, #171717 50%, white 50%);
 }
