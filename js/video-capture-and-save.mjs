@@ -13,11 +13,11 @@ export const captureVideo = () => {
       ".switch-camera-facing-mode"
     );
     const isMirrored = facingModeButton.dataset.facingMode === "front";
-    recordVideo(isMirrored);
+    recordVideo(isMirrored, facingModeButton);
   });
 };
 
-const recordVideo = async (isMirrored = false) => {
+const recordVideo = async (isMirrored = false, facingModeButton) => {
   const video = document.getElementById("stream");
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
@@ -49,7 +49,7 @@ const recordVideo = async (isMirrored = false) => {
       if (mediaRecorder && mediaRecorder.state === "recording") {
         mediaRecorder.stop();
         isMirrored = !isMirrored;
-        recordVideo(isMirrored);
+        recordVideo();
       }
     });
   } catch (e) {
