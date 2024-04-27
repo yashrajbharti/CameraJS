@@ -30,6 +30,10 @@ body {
     font-style: normal;
 }
 
+#camera {
+    position: relative;
+}
+
 /* Video Element */
 video {
     inline-size: 100vw;
@@ -161,4 +165,8 @@ video.flip {
     100% {
         scale: 1;
     }
+}
+
+#camera:has(.capture-button:is(.click)) video {
+    opacity: 0;
 }
