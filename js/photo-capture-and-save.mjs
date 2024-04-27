@@ -13,7 +13,7 @@ export const capturePhoto = () => {
   });
 };
 
-export const drawOnCanvasAndSavePhoto = async () => {
+const drawOnCanvasAndSavePhoto = async () => {
   const video = document.getElementById("stream");
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
