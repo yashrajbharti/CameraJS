@@ -7,6 +7,6 @@ export const changeFacingMode = () => {
     streamWebCamVideo();
     setTimeout(() => {
       facingModeButton.querySelector(".rotate").classList.remove("rotating");
-    }, 3000);
+    }, 1500);
   });
 };

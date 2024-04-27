@@ -94,8 +94,8 @@ video {
 }
 
 .switch-camera-facing-mode .rotate:is(.rotating) {
-    animation: rotate 3s both;
-    transform-origin: 50% calc(50% + 1px);
+    animation: rotate 1.5s both;
+    transform-origin: 50% calc(50% + 1.1px);
 }
 
 @keyframes rotate {
@@ -105,6 +105,6 @@ video {
     }
 
     100% {
-        rotate: -360deg;
+        rotate: -180deg;
     }
 }
