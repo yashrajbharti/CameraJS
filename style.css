@@ -42,6 +42,7 @@ video.flip {
     scale: -1 1;
 }
 
+/* Video Controls */
 .controls {
     display: flex;
     block-size: 100px;
@@ -50,6 +51,8 @@ video.flip {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Video filters */
 
 .filters {
     inline-size: 48px;
@@ -69,6 +72,7 @@ video.flip {
     background-image: linear-gradient(black 50%, white);
 }
 
+/* Switch between video and photo capture modes */
 .switch-camera-video-photo-mode input[type="checkbox"] {
     display: none;
 }
@@ -98,10 +102,12 @@ video.flip {
     background-image: linear-gradient(to right, #171717 50%, white 50%);
 }
 
+/* Capture button */
 #camera:has(.switch-camera-video-photo-mode input[type="checkbox"]:checked) .capture-button .capture-icon {
     fill: red;
 }
 
+/* Switch between rear and front camera modes */
 .switch-camera-facing-mode {
     cursor: pointer;
     pointer-events: all;
@@ -133,6 +139,7 @@ video.flip {
     }
 }
 
+/* Capture button to click and take photos */
 .capture-button {
     cursor: pointer;
 }
