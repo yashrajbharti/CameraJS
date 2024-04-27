@@ -20,15 +20,16 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   const video = document.getElementById("stream");
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  const scaleFactor = 2;
+  canvas.width = video.videoWidth * scaleFactor;
+  canvas.height = video.videoHeight * scaleFactor;
   context.translate(canvas.width, 0);
   if (isMirrored) {
     context.scale(-1, 1);
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
   }
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
   try {
-    const imageDataUrl = canvas.toDataURL("image/jpeg");
+    const imageDataUrl = canvas.toDataURL("image/jpeg", 0.9);
     const link = document.createElement("a");
     link.href = imageDataUrl;
     link.download = `photo_${new Date().toUTCString()}.jpg`;
