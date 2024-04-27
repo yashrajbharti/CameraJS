@@ -1,6 +1,7 @@
 export let mediaRecorder = null;
 let chunks = [];
 let startTime = null;
+let timerInterval;
 const recordingIndicator = document.createElement("div");
 
 export const captureVideo = () => {
@@ -30,7 +31,11 @@ const recordVideo = async (isMirrored = false, facingModeButton) => {
     startTime = Date.now(); // Start time for elapsed time calculation
     mediaRecorder.start();
     mediaRecorder.ondataavailable = (event) => {
-      chunks.push(event.data);
+      const blob = new Blob([event.data], {
+        type: "video/mp4",
+      });
+      chunks.push(blob);
+      console.log(chunks);
     };
 
     // Start recording indicator
@@ -39,7 +44,7 @@ const recordVideo = async (isMirrored = false, facingModeButton) => {
     document.body.appendChild(recordingIndicator);
 
     // Update recording indicator at regular intervals
-    const timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
       const elapsedTime = Date.now() - startTime;
       recordingIndicator.textContent = formatTime(elapsedTime);
     }, 1000);
