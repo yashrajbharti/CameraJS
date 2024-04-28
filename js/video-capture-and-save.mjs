@@ -28,22 +28,19 @@ const recordVideo = async (isMirrored = false, facingModeButton) => {
   }
   try {
     mediaRecorder = new MediaRecorder(video.srcObject);
-    startTime = Date.now(); // Start time for elapsed time calculation
+    startTime = Date.now();
     mediaRecorder.start();
     mediaRecorder.ondataavailable = (event) => {
       const blob = new Blob([event.data], {
         type: "video/mp4",
       });
       chunks.push(blob);
-      console.log(chunks);
     };
 
-    // Start recording indicator
     recordingIndicator.textContent = "00:00:00";
     recordingIndicator.classList.add("record");
     document.body.appendChild(recordingIndicator);
 
-    // Update recording indicator at regular intervals
     timerInterval = setInterval(() => {
       const elapsedTime = Date.now() - startTime;
       recordingIndicator.textContent = formatTime(elapsedTime);
@@ -92,7 +89,6 @@ const saveRecordedVideo = () => {
   chunks = [];
 };
 
-// Helper function to format time in HH:mm:ss format
 const formatTime = (milliseconds) => {
   const totalSeconds = Math.floor(milliseconds / 1000);
   const hours = Math.floor(totalSeconds / 3600);
@@ -101,7 +97,6 @@ const formatTime = (milliseconds) => {
   return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 };
 
-// Helper function to pad single digit numbers with leading zero
 const pad = (num) => {
   return num.toString().padStart(2, "0");
 };
