@@ -280,6 +280,10 @@ video[data-lens="monochrome"] {
     filter: grayscale(1);
 }
 
+video[data-lens*="gradient"] {
+    filter: saturate(0);
+}
+
 .filterLens:is(.none, .monochrome) {
     display: none;
 }
