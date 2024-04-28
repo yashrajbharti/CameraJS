@@ -14,12 +14,11 @@ export const captureVideo = () => {
     const facingModeButton = document.querySelector(
       ".switch-camera-facing-mode"
     );
-    const isMirrored = facingModeButton.dataset.facingMode === "front";
-    recordVideo(isMirrored, facingModeButton);
+    recordVideo(facingModeButton);
   });
 };
 
-const recordVideo = async (isMirrored = false, facingModeButton) => {
+const recordVideo = async (facingModeButton) => {
   const video = document.getElementById("stream");
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
