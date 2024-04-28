@@ -12,7 +12,7 @@ export const applyFilters = () => {
     } else {
       if (e.target.hasAttribute("name")) {
         applyLensFilter(e.target.value);
-        // checkbox.checked = false;
+        // checkbox.checked = false;  this was for the no cancel button approach
       }
     }
   });
