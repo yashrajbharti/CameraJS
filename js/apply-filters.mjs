@@ -10,7 +10,7 @@ export const applyFilters = () => {
     if (checkbox.checked === false) {
       checkbox.checked = true;
     } else {
-      if (e.target.classList.contains("lens")) {
+      if (e.target.hasAttribute("name")) {
         checkbox.checked = false;
       }
     }
