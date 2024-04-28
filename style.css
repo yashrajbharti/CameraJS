@@ -59,21 +59,83 @@ video.flip {
 /* Video filters */
 
 .filters {
-    inline-size: 48px;
-    block-size: 48px;
+    position: relative;
+    inline-size: 50px;
+    block-size: 50px;
     display: flex;
     align-items: center;
+    padding-block-start: 0;
+    gap: 10px;
     justify-content: center;
-    border: 1px solid white;
-    border-radius: 50%;
+    flex-direction: column;
+    border: 1.5px solid transparent;
+    background-color: black;
+    border-radius: 48px;
     overflow: hidden;
+    cursor: pointer;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.filters #filter-toggle:not(:checked)~input:not(:checked)+label {
+    display: none;
+}
+
+.filters #filter-toggle:not(:checked)~label {
+    pointer-events: none;
+}
+
+.filters #filter-toggle:not(:checked)+label {
+    display: none;
+}
+
+.filters:has(#filter-toggle:checked) {
+    block-size: 200px;
+    padding-block-start: 80px;
+    border: 1.5px solid white;
+    overflow: scroll;
+}
+
+
+.filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filters input {
+    display: none;
+}
+
+.filters label {
+    inline-size: 48px;
+    min-block-size: 48px;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.filters p {
-    inline-size: 48px;
-    block-size: 48px;
+.filters label[for="none"] {
+    background-image: linear-gradient(45deg, #111 48%, white 48%, white 52%, #111 52%, #111);
+    border: 1.5px solid white;
+}
+
+.filters label[for="monochrome"] {
     background-image: linear-gradient(black 50%, white);
+}
+
+.filters label[for="gradient1"] {
+    background-image: linear-gradient(pink 50%, blue);
+}
+
+.filters label[for="gradient2"] {
+    background-image: linear-gradient(purple 50%, blue);
+}
+
+.filters label[for="gradient3"] {
+    background-image: linear-gradient(lightgreen, royalblue);
+}
+
+
+.filters label[for="gradient4"] {
+    background-image: linear-gradient(yellow, white);
 }
 
 /* Switch between video and photo capture modes */
