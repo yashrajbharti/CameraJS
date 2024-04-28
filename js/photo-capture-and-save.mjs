@@ -31,7 +31,8 @@ const drawOnCanvasAndSavePhoto = async (isMirrored = false) => {
   }
   // Check for filters
   if (video.dataset.lens === "monochrome") context.filter = "grayscale(1)";
-  if (video.dataset.lens.startsWith("gradient")) context.filter = "saturate(0)";
+  if (video.dataset.lens.startsWith("gradient"))
+    context.filter = "saturate(0.1)";
 
   const flashElement = document.createElement("div");
   flashElement.style.position = "fixed";

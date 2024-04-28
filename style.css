@@ -280,7 +280,7 @@ video[data-lens="monochrome"] {
 }
 
 video[data-lens*="gradient"] {
-    filter: saturate(0);
+    filter: saturate(0.1);
 }
 
 .filterLens:is(.none, .monochrome) {
