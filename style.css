@@ -110,6 +110,11 @@ video.flip {
     min-block-size: 48px;
     border-radius: 50%;
     cursor: pointer;
+    aspect-ratio: 1/1;
+}
+
+.filters:has(#filter-toggle:checked) input:checked+label.lens {
+    border: 2px solid rgb(55, 55, 249);
 }
 
 .filters label[for="none"] {
