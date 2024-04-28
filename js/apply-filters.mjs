@@ -32,3 +32,14 @@ const applyLensFilter = (value) => {
   filterElement.classList.add(value);
   document.body.appendChild(filterElement);
 };
+
+export const addFiltersToPhoto = (value, ctx, width, height) => {
+  if (value === "gradient1") {
+    ctx.globalCompositeOperation = "destination-out";
+    const gradient = ctx.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, "rgba(255, 255, 255, 0.5)");
+    gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+  }
+};
