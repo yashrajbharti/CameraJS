@@ -13,7 +13,7 @@ export const capturePhoto = () => {
     photoButton.classList.add("click");
     setTimeout(() => {
       photoButton.classList.remove("click");
-    }, 200);
+    }, 300);
     drawOnCanvasAndSavePhoto(facingModeButton.dataset.facingMode === "front");
   });
 };
