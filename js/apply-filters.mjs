@@ -34,7 +34,7 @@ const applyLensFilter = (value) => {
 };
 
 export const addFiltersToPhoto = (value, ctx, width, height) => {
-  if (value === "gradient1") {
+  if (value.startsWith("gradient")) {
     ctx.globalCompositeOperation = "destination-out";
     const gradient = ctx.createLinearGradient(0, 0, 0, height);
     gradient.addColorStop(0, "rgba(255, 192, 203, 0.6)");
