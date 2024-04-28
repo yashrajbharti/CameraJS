@@ -18,4 +18,7 @@ export const applyFilters = () => {
   });
 };
 
-const applyLensFilter = (value) => {};
+const applyLensFilter = (value) => {
+  const video = document.getElementById("stream");
+  video.dataset.lens = value;
+};

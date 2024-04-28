@@ -268,3 +268,13 @@ video.flip {
     letter-spacing: 0.1rem;
     border-radius: 30px;
 }
+
+/* Filter lens effect on video (does not retain for camera pics or recordings for now */
+
+video[data-lens="none"] {
+    filter: unset;
+}
+
+video[data-lens="monochrome"] {
+    filter: grayscale(1);
+}
