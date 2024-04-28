@@ -90,10 +90,6 @@ video.flip {
     display: none;
 }
 
-#filter-toggle+label {
-    display: none;
-}
-
 .filters #filter-toggle:not(:checked)~label {
     pointer-events: none;
 }
