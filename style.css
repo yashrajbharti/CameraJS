@@ -58,6 +58,12 @@ video.flip {
 
 /* Video filters */
 
+.lenses {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .filters {
     position: relative;
     inline-size: 50px;
@@ -96,6 +102,13 @@ video.flip {
     overflow: scroll;
 }
 
+.lenses .cancel {
+    cursor: pointer;
+}
+
+.lenses:has(.filters #filter-toggle:not(:checked)) .cancel {
+    display: none;
+}
 
 .filters::-webkit-scrollbar {
     display: none;

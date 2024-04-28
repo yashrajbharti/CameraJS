@@ -11,8 +11,11 @@ export const applyFilters = () => {
       checkbox.checked = true;
     } else {
       if (e.target.hasAttribute("name")) {
-        checkbox.checked = false;
+        applyLensFilter(e.target.value);
+        // checkbox.checked = false;
       }
     }
   });
 };
+
+const applyLensFilter = (value) => {};
