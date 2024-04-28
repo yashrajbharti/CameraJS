@@ -21,4 +21,14 @@ export const applyFilters = () => {
 const applyLensFilter = (value) => {
   const video = document.getElementById("stream");
   video.dataset.lens = value;
+  document.querySelector(".filterLens")?.remove();
+  const filterElement = document.createElement("div");
+  filterElement.classList.add("filterLens");
+  filterElement.style.position = "fixed";
+  filterElement.style.top = "0";
+  filterElement.style.left = "0";
+  filterElement.style.width = "100%";
+  filterElement.style.height = "calc(100vh - 220px)";
+  filterElement.classList.add(value);
+  document.body.appendChild(filterElement);
 };

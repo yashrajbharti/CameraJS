@@ -62,6 +62,7 @@ video.flip {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 2;
 }
 
 .filters {
@@ -277,4 +278,25 @@ video[data-lens="none"] {
 
 video[data-lens="monochrome"] {
     filter: grayscale(1);
+}
+
+.filterLens:is(.none, .monochrome) {
+    display: none;
+}
+
+.filterLens:is(.gradient1) {
+    background-image: linear-gradient(rgba(255, 192, 203, 0.354) 50%, rgba(0, 0, 255, 0.12))
+}
+
+.filterLens:is(.gradient2) {
+    background-image: linear-gradient(rgba(128, 0, 128, 0.573) 50%, rgba(0, 0, 255, 0.59));
+}
+
+.filterLens:is(.gradient3) {
+    background-image: linear-gradient(rgba(147, 245, 139, 0.239), rgba(65, 105, 225, 0.284));
+}
+
+
+.filterLens:is(.gradient4) {
+    background-image: linear-gradient(rgba(255, 255, 0, 0.215), rgba(255, 255, 255, 0.436));
 }
