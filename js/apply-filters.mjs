@@ -37,8 +37,8 @@ export const addFiltersToPhoto = (value, ctx, width, height) => {
   if (value === "gradient1") {
     ctx.globalCompositeOperation = "destination-out";
     const gradient = ctx.createLinearGradient(0, 0, 0, height);
-    gradient.addColorStop(0, "rgba(255, 255, 255, 0.5)");
-    gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");
+    gradient.addColorStop(0, "rgba(255, 192, 203, 0.6)");
+    gradient.addColorStop(1, "rgba(0, 0, 255, 1)");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
   }

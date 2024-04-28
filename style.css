@@ -138,12 +138,11 @@ video.flip {
 }
 
 .filters label[for="none"] {
-    background-image: linear-gradient(45deg, #111 48%, white 48%, white 52%, #111 52%, #111);
-    border: 1.5px solid white;
+    background-image: linear-gradient(45deg, #111 48%, #171717 48%, #171717);
 }
 
 .filters label[for="monochrome"] {
-    background-image: linear-gradient(black 50%, white);
+    background-image: linear-gradient(45deg, #080808 50%, white 45%, white);
 }
 
 .filters label[for="gradient1"] {
