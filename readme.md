@@ -1,6 +1,7 @@
 # CameraJS 📸
 
-A vanilla JavaScript project packed with all the basic features of a camera, such as photo, video, switching camera and other necessary options, with everything easy-to-customise and use!
+A vanilla JavaScript project packed with all the basic features of a camera, such as photo, video, switching camera and other necessary options, with everything easy-to-customise and use!  
+For an advanced example check [Advanced JS Camera](https://cybtekk-llp.github.io/Advanced-Camera/) which incorporates MediaTrackCapabilities to enable zoom.
 
 <img src="./assets/qr-code.png" height="250px">
 
